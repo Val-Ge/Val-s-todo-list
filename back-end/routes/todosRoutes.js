@@ -15,7 +15,7 @@ router.get("/todos", async (req, res) => {
 //create a new todo
 router.post("/todos", async (req, res) => {
     const newTodo = new Todo({
-        test: req.body.text,
+        text: req.body.text,
         completed: false
     });
     try {

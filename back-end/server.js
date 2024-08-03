@@ -4,13 +4,13 @@ import cors from 'cors';
 import todoRoutes from "./routes/todosRoutes.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
 
 //mongodb connection
-mongoose.connect('mongodb://localhost27017/todo', {
+mongoose.connect('mongodb://localhost:27017/todo', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -21,5 +21,5 @@ mongoose.connect('mongodb://localhost27017/todo', {
 app.use("/api", todoRoutes);
 
 app.listen(PORT, () => {
-    console.log(` server is listening on port ${PORT}`)
+    console.log(`server is listening on port ${PORT}`)
 });
